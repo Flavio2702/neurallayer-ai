@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1774098799197,
+      "tag": "0000_swift_the_renegades",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774104161725,
+      "tag": "0001_ambiguous_shriek",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1774107904742,
+      "tag": "0002_plain_owl",
+      "breakpoints": true
+    }
+  ]
+}

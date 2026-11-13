@@ -1,0 +1,23 @@
+{
+  "name": "@neuralayer/gateway",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node ./scripts/run-gateway.mjs dev",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test --test-isolation=none src/**/*.test.ts scripts/run-gateway.test.mjs",
+    "test:demo-path": "node --import tsx --test --test-isolation=none src/demo-path.smoke.test.ts",
+    "start": "node ./scripts/run-gateway.mjs start"
+  },
+  "dependencies": {
+    "@neuralayer/config": "workspace:*",
+    "@neuralayer/core": "workspace:*",
+    "@neuralayer/db": "workspace:*",
+    "@neuralayer/provider-adapters": "workspace:*",
+    "fastify": "^5.12.8",
+    "zod": "^4.6.6"
+  },
+  "license": "Apache-2.0"
+}

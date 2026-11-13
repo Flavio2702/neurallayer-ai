@@ -1,0 +1,40 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.netrc
+credentials*.json
+secrets*.json
+# Dependencies and generated output
+node_modules/
+.pnpm-store/
+.turbo/
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+# Runtime data and diagnostics
+*.log
+logs/
+*.db
+*.sqlite*
+*.dump
+*.sql.gz
+backups/
+postgres-data/
+test-results/
+playwright-report/
+# Personal editor and agent metadata
+.vscode/
+.idea/
+.agents/
+.claude/
+.codex/
+.DS_Store
+Thumbs.db

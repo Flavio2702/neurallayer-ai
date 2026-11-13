@@ -1,0 +1,44 @@
+{
+  "name": "neuralayer-ai",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "format:check": "biome check . --formatter-enabled=true --linter-enabled=false --assist-enabled=false",
+    "typecheck": "turbo run typecheck",
+    "gateway:dev": "pnpm --filter @neuralayer/gateway dev",
+    "admin:dev": "pnpm --filter @neuralayer/admin dev",
+    "admin:smoke:overview": "node ./apps/admin/scripts/smoke-overview.mjs",
+    "admin:smoke:projects": "node ./apps/admin/scripts/smoke-projects.mjs",
+    "admin:smoke:self-serve": "node ./apps/admin/scripts/smoke-self-serve.mjs",
+    "admin:smoke:trial-summary": "node ./apps/admin/scripts/smoke-trial-summary.mjs",
+    "db:start": "docker compose up -d",
+    "db:stop": "docker compose down",
+    "db:migrate": "pnpm --filter @neuralayer/db db:migrate",
+    "db:seed": "pnpm --filter @neuralayer/db db:seed",
+    "test": "node --env-file-if-exists=.env scripts/test.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.7",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "turbo": "^2.11.11",
+    "typescript": "^5.9.3",
+    "pnpm": "10.34.9"
+  },
+  "pnpm": {
+    "overrides": {
+      "fast-uri": "^3.1.5",
+      "postcss": "^8.5.23",
+      "esbuild": "^0.28.1"
+    }
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@neuralayer/provider-adapters",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc -w -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test --test-isolation=none src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@neuralayer/core": "workspace:*"
+  },
+  "license": "Apache-2.0"
+}

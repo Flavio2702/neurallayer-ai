@@ -1,0 +1,36 @@
+{
+  "name": "@neuralayer/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc -w -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test --test-isolation=none src/**/*.test.ts",
+    "benchmark:sync": "node --env-file-if-exists=../../.env --import tsx src/artificial-analysis-sync.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --env-file-if-exists=../../.env --import tsx src/migrate.ts",
+    "db:seed": "node --env-file-if-exists=../../.env --import tsx src/seed.ts"
+  },
+  "dependencies": {
+    "@neuralayer/config": "workspace:*",
+    "@neuralayer/core": "workspace:*",
+    "drizzle-orm": "^0.45.4",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.28.1"
+  },
+  "license": "Apache-2.0"
+}
